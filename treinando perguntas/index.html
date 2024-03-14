@@ -18,6 +18,8 @@
         }
 
 
+
+
         section#container1 {
             color: white;
             display: inline-block;
@@ -51,7 +53,11 @@
         }
 
 
-        input#confirmarTaxa, button#botao-taxa {
+        input#confirmarTaxa {
+            display: none;
+        }
+
+        button#botaoTaxa {
             display: none;
         }
 
@@ -68,48 +74,68 @@
         <label for="entParc">Quantas parcelas? </label>
         <input type="number" name="entParc" id="entParc">
         <br>
-        <label for="taxa">Gostaria de saber quanto vai ficar com a taxa de juros? </label>
-        <br>
-        <label for="sim">Sim</label>
-        <input type="checkbox" name="alt" value="sim">
+        <!-- <label for="taxa">Qual vai ser a taxa de juros?</label>
+        <input type="number" name="taxa" id="entTaxa"> -->
+        <button id="calcular" onclick="calcular()">Calcular</button>
+       <!-- <p>Gostaria de saber quanto vai ficar com a taxa de juros?</p>
+        <br> -->
+
+
+
+        <!-- <label for="sim">Sim</label>
+        <input id="checkbox1" type="radio" name="check" value="sim">
         <label for="nao">Não</label>
-        <input type="checkbox" name="alt" value="nao">
+        <input type="radio" name="check" value="nao">
         <br>
-        <input type="number" id="confirmaTaxa" placeholder="Qual vai ser a taxa de juros?">
+
+
+        <input type="number" id="confirmarTaxa" placeholder="Qual vai ser a taxa de juros?">
         <br>
-        <button onclick="calculaTaxa()">Calcular</button>
+        <
 
         <br>
 
-        <button id="botaoTaxa" onclick="calcular()">calcular</button>
-    </section>
+        <button id="botaoTaxa" onclick="calcularTaxa()">calcular</button>
+    </section> -->
 
     <section id="container2">
-        <p id="saida"></p>
+        <p id="saida1"></p>
     </section>
 
 
     <script>
 
+       
+
         function calcular() {
             var valor = document.getElementById("entEmprest").value;
             var parcela = document.getElementById("entParc").value;
-            var checkbox = document.getElementById("checkbox1").value;
-            var inputTaxa = document.getElementById("confirmaTaxa")
-            var botaoTaxa = document.getElementById("botaoTaxa")
-
-
-
+            // var taxa = document.getElementById("entTaxa").value
+            // var checkbox = document.getElementById("checkbox1").value;
+            // var inputTaxa = document.getElementById("confirmarTaxa")
+            // var botaoTaxa = document.getElementById("botaoTaxa")
             var total = valor / parcela;
 
             document.getElementById("saida1").innerHTML = "O valor do empréstimo vai ficar: " + total;
 
-            if (checkbox.checked) {
-                
 
-            }
+        //     if (checkbox.checked) {
+        //         inputTaxa.style.display = 'block';
+        //         botaoTaxa.style.display = 'block';
+        //         btnCalcular.style.display = 'none';
+        //     } else {
+        //         document.getElementById("saidaTaxa").innerHTML = "Taxa não calculada";
+        //     }
+        // }
 
+        // function calcularTaxa() {
+        //     var valor = document.getElementById("entEmprest").value;
+        //     var parcela = document.getElementById("entParc").value;
+        //     var juros = document.getElementById("confirmaTaxa").value
 
+        //     var total = (valor * parcela * juros)/100
+
+        //     document.getElementById("saida1").innerHTML = "O valor total do empréstimo vai ficar: " + total;
 
 
         }
