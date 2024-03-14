@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+
+        body {
+            background-color: black;
+        }
+        
+
+
+        h1 {
+            color: orange;
+            text-align: center;
+        }
+
+
+        section#container1 {
+            color: white;
+            display: inline-block;
+            justify-content: center;
+            margin-top: 110px;
+            margin-bottom: 60px
+
+        }
+
+        section#container2 {
+            width: 85%;
+            color: green;
+            background-color: black;
+            display: flex;
+            font-size: 1.1em;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-indent: 40px;
+           
+        }
+
+        input {
+            color: black;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 12px rgb(255, 225, 0);
+        }
+
+        label {
+            color: yellow;
+        }
+
+
+        input#confirmarTaxa, button#botao-taxa {
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Algoritmos com JavaScript</h1>
+
+    <section id="container1">
+        <label for="entEmprest">Qual o valor do empréstimo? </label>
+        <input type="text" name="entEmprest" id="entEmprest">
+        <br>
+        <label for="entParc">Quantas parcelas? </label>
+        <input type="number" name="entParc" id="entParc">
+        <br>
+        <label for="taxa">Gostaria de saber quanto vai ficar com a taxa de juros? </label>
+        <br>
+        <label for="sim">Sim</label>
+        <input type="checkbox" name="alt" value="sim">
+        <label for="nao">Não</label>
+        <input type="checkbox" name="alt" value="nao">
+        <br>
+        <input type="number" id="confirmaTaxa" placeholder="Qual vai ser a taxa de juros?">
+        <br>
+        <button onclick="calculaTaxa()">Calcular</button>
+
+        <br>
+
+        <button id="botaoTaxa" onclick="calcular()">calcular</button>
+    </section>
+
+    <section id="container2">
+        <p id="saida"></p>
+    </section>
+
+
+    <script>
+
+        function calcular() {
+            var valor = document.getElementById("entEmprest").value;
+            var parcela = document.getElementById("entParc").value;
+            var checkbox = document.getElementById("checkbox1").value;
+            var inputTaxa = document.getElementById("confirmaTaxa")
+            var botaoTaxa = document.getElementById("botaoTaxa")
+
+
+
+            var total = valor / parcela;
+
+            document.getElementById("saida1").innerHTML = "O valor do empréstimo vai ficar: " + total;
+
+            if (checkbox.checked) {
+                
+
+            }
+
+
+
+
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html>

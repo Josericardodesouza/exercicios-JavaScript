@@ -3,32 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titulo</title>
+    <title></title>
+    <style>
 
+        body {
+            background-color: black;
+        }
+        
+
+
+        h1 {
+            color: orange;
+            text-align: center;
+        }
+
+
+        section#container1 {
+            color: white;
+            display: flex;
+            justify-content: center;
+            margin-top: 110px;
+            margin-bottom: 60px;
+
+        }
+
+        section#container2 {
+            width: 85%;
+            color: green;
+            background-color: black;
+            display: flex;
+            font-size: 1.1em;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-indent: 40px;
+           
+        }
+
+        input {
+            margin-left: 10px;
+        }
+
+    </style>
 </head>
 <body>
-    <main>
-        <section id="entrada">
-            
-            <div id="container">
-                <h1>Titulo</h1>
-                <div id="item">
-                    <label for=""></label>
-                    <input type="text"><button onclick="">IR</button>
-                </div>
-            </div>
-        </section>
-        <br>
+    <h1>Algoritmos com JavaScript</h1>
+
+    <section id="container1">
+        <label for="">Qual o valor do produto? </label>
+        <input type="text" id=""><button onclick="calcular()">calcular</button>
+    </section>
+
+    <section id="container2">
+        <p id="saida"></p>
+    </section>
 
 
-        <section id="saida">
-            <div id="terminal">
-                <p id="saida1"></p>
-        
-            </div>
-        </section>
-    </main>
+    <script>
 
-    <script src=""></script>
+
+
+
+    </script>
+    
 </body>
 </html>
