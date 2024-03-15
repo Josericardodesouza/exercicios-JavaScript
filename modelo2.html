@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+
+        body {
+            background-color: black;
+        }
+        
+
+
+        h1 {
+            color: orange;
+            text-align: center;
+        }
+
+
+
+
+        section#container1 {
+            color: white;
+            display: inline-block;
+            justify-content: center;
+            margin-top: 110px;
+            margin-bottom: 60px
+
+        }
+
+        section#container2 {
+            width: 100%;
+            color: green;
+            background-color: black;
+            display: flex;
+            font-size: 1.1em;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-indent: 40px;
+           
+        }
+
+        input {
+            color: black;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 12px rgb(255, 225, 0);
+        }
+
+        label {
+            color: yellow;
+        }
+
+
+        p#saida1 {
+            width: 100%;
+        }
+
+
+        section#fim {
+            background-color: black;
+            width: 100vw;
+            height: auto;
+            margin-top: 4px;
+            margin: 0;
+            display: none;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Algoritmos com JavaScript</h1>
+
+    <h3></h3>
+
+    <section id="container1">
+        <label for="">Qual o valor do empréstimo? </label>
+        <input type="" name="" id="">
+        <br>
+        <label for="">Quantas parcelas? </label>
+        <input type="" name="" id="">
+        <br>
+        <button id="calcular" onclick="fim(); calcular()">Calcular</button>
+    
+
+
+
+    <section id="container2">
+        <p id="saida1"></p>
+
+    </section>
+
+    <section id="fim">
+        <p style="color: white; font-style: italic;" id="fimConsole"></p>
+
+    </section>
+
+
+    <script>
+
+
+ function fim() {
+            var botao = document.getElementById("calcular");
+            var oculta = document.getElementById("fim");
+
+            botao.addEventListener('click', function() {
+                
+            if (oculta.style.display == 'block') {
+                oculta.style.display = 'none'
+                
+
+            } else {
+                oculta.style.display = 'block';
+                document.getElementById("fimConsole").innerHTML = ">>>> Fim da execução do programa!"
+            }
+
+
+    })
+
+ }
+
+
+    </script>
+    
+</body>
+</html>

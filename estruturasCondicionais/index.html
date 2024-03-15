@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+
+        body {
+            background-color: black;
+        }
+        
+
+
+        h1 {
+            color: orange;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h3 {
+            color: whitesmoke;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+
+
+
+        section#container1 {
+            color: white;
+            display: inline-block;
+            justify-content: center;
+            margin-top: 110px;
+            margin-bottom: 30px
+
+        }
+
+        section#container2 {
+            width: 100%;
+            color: green;
+            background-color: black;
+            display: flex;
+            font-size: 1.1em;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-indent: 40px;
+           
+        }
+
+        input {
+            color: black;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 12px rgb(255, 225, 0);
+        }
+
+        label {
+            color: yellow;
+        }
+
+
+        p#saida1 {
+            width: 100%;
+        }
+
+        section#fim {
+            background-color: black;
+            width: 100vw;
+            height: 100px;
+            margin-top: 4px;
+            margin: 0px;
+            display: none;
+
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Algoritmos com JavaScript</h1>
+
+    <h3>Estruturas Condicionais Simples</h3>
+
+    <section id="container1">
+        <label for="">Em que ano estamos? </label>
+        <input type="number" name= "entAno" id="entAno" max="4" size="4" required oninput="limiteNumAno()">
+        <br>
+        <label for="entNasc">Em que ano você nasceu? </label>
+        <input type="number" name="entNasc" id="entNasc" max="4" size="4" required oninput="limiteNumNasc()">
+        <br>
+        <button id="calcular" onclick="calcular(); fim()">Calcular</button>
+    
+
+
+
+    <section id="container2">
+        <p id="saida1"></p>
+    
+    </section>
+
+    <section id="fim">
+        <p style="color: white; font-style: italic;" id="fimConsole"></p>
+
+    </section>
+
+
+    <script>
+
+        function limiteNumAno() {
+            var num = 4;
+            var valorInput = document.getElementById("entAno");
+
+            var limiteNum = valorInput.value;
+
+            if (limiteNum.length > num) {
+
+           valorInput.value = limiteNum.slice(0, num);
+            }
+        }
+
+
+        function limiteNumNasc() {
+            var num = 4
+            var valorNasc = document.getElementById("entNasc");
+
+            var limiteNum = valorNasc.value;
+
+            if (limiteNum.length > num) {
+                valorNasc.value = limiteNum.slice(0, num);
+            }
+         }
+
+
+
+
+
+         function fim() {
+            var botao = document.getElementById("calcular");
+            var oculta = document.getElementById("fim");
+
+            botao.addEventListener('click', function() {
+                
+            if (oculta.style.display == 'block') {
+                oculta.style.display = 'none'
+                
+
+            } else {
+                oculta.style.display = 'block';
+                document.getElementById("fimConsole").innerHTML = ">>>> Fim da execução do programa!"
+            }
+
+
+    })
+
+ }
+
+
+
+
+
+        function calcular() {
+            const ano = document.getElementById("entAno").value
+            const nascimento = document.getElementById("entNasc").value
+
+            const idade = ano - nascimento;
+
+            document.getElementById("saida1").innerHTML = "Em " + ano + " você terá " + idade + " anos de idade!";
+            
+
+
+
+
+//             function limiteNumPeso() {
+//   var num = 5;
+//   var limite = document.getElementById("ent-peso");
+
+//   var limiteNum = limite.value;
+
+//   if (limiteNum.length > num)
+
+//    limite.value = limiteNum.slice(0, num);
+
+
+//  }
+        
+        
+        }
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
