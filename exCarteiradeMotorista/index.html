@@ -40,11 +40,15 @@
             width: 100vw;
             color: green;
             background-color: black;
-            display: flex;
+            display: block;
             font-size: 1.1em;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             text-indent: 40px;
            
+        }
+
+        section#container2 > p {
+            margin: 0;
         }
 
         input {
@@ -59,11 +63,11 @@
             color: red;
         }
 
-
+/* 
         p#saida1 {
             width: 100%;
             margin: 0;
-        }
+        } */
 
 
         section#fim {
@@ -88,11 +92,14 @@
     <h3>-----------------------------------</h3>
 
     <section id="container1">
-        <label for="">Digite seu nome: </label>
-        <input type="" name="" id="">
+        <label for="nome">Digite seu nome: </label>
+        <input type="text" name="nome" id="idNome" required>
         <br>
-        <label for="">Quantas parcelas? </label>
-        <input type="" name="" id="">
+        <label for="parc"?>Digite o ano atual: </label>
+        <input type="number" name="ano" id="idAno" required>
+        <br>
+        <label for="anoNasc">Informe seu ano de nascimento: </label>
+        <input type="number" name="anoNasc" id="idAnoNasc" required>
         <br>
         <button id="calcular" onclick="fim(); calcular()">Calcular</button>
     
@@ -101,10 +108,15 @@
 
     <section id="container2">
         <p id="saida1"></p>
+        <br>
+        <p id="saida2"></p>
+        <br>
+        <p id="saida3"></p>
 
     </section>
 
     <section id="fim">
+        <br>
         <p style="color: white; font-style: italic;" id="fimConsole"></p>
 
     </section>
@@ -131,6 +143,44 @@
 
     })
 
+ }
+
+
+ function calcular() {
+    var nome = document.getElementById('idNome')
+    var at = document.getElementById('idAno')
+    var an = document.getElementById('idAnoNasc')
+    var container = document.getElementById('container2')
+
+
+    // if (at >=0 && an >= 0) {
+    //     var idade = at - an
+    // } else {
+    //     container.style.display = 'inline-block'
+    //     document.getElementById('saida1').innerHTML = 'Você não digitou os campos corretamente'
+    // }
+
+
+   
+    // var confereAn = an
+    // var confereAt = at
+    // var idade = confereAn - confereAt
+
+    // if (at >= 0 && an >= 0 && idade >= 0) {
+    //     container.style.display = 'inline-block'
+    // } else {
+    //     container.style.display = 'none'
+    // }
+
+
+    if(idade >= 18) {
+        document.getElementById('saida1').innerHTML = 'idade: ' + idade;
+        document.getElementById('saida2').innerHTML = nome + ', você está apto(a) a tirar a carteira de motorista';
+    } else {
+        container.style.display = 'block'
+        document.getElementById('saida1').innerHTML = 'idade: ' + idade;
+        document.getElementById('saida2').innerHTML = nome + ', você está inapto(a) para tirar a carteira de motorista'
+    }
  }
 
 
