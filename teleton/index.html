@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>TELETON</title>
     <style>
 
+        :root {
+            --cor1: #874897;
+            --cor2: #FF90FE;
+            --cor3: #1BA7B4;
+            
+        }
+
         body {
-            background-color: black;
+            background-color: white;
         }
         
 
@@ -45,11 +52,6 @@
            
         }
 
-        section#container2 > p {
-            margin: 0;
-            width: 100%;
-        }
-
         input {
             color: black;
             font-weight: bold;
@@ -63,6 +65,9 @@
         }
 
 
+        section#container2 > p {
+            width: 100%;
+        }
 
 
         section#fim {
@@ -85,20 +90,16 @@
     <h3></h3>
 
     <section id="container1">
-        <label for="nota1">Digite a nota da primeira unidade: </label>
-        <input type="number" name="nota1" id="nota1" required>
+
+        <p>Muito obrigado por ajudar!</p>
+        <p>[1] para doar </p>
+
+
+        <label for=""> </label>
+        <input type="" name="" id="">
         <br>
-        <label for="nota2">Digite sua nota da segunda unidade: </label>
-        <input type="number" name="nota2" id="nota2" required>
-        <br>
-        <label for="nota3">Digite sua nota da terceira unidade: </label>
-        <input type="number" name="nota3" id="nota3" required>
-        <br>
-        <label for="nota4">Digite sua nota da quarta unidade: </label>
-        <input type="number" name="nota4" id="nota4" required>
-        <br>
-        <label for="nota5">Digite sua nota da quinta unidade: </label>
-        <input type="number" name="nota5" id="nota5" required>
+        <label for=""> </label>
+        <input type="" name="" id="">
         <br>
         <button id="calcular" onclick="fim(); calcular()">Calcular</button>
     
@@ -107,10 +108,6 @@
 
     <section id="container2">
         <p id="saida1"></p>
-        <br>
-        <p id="saida2"></p>
-        <br>
-        <p id="saida3"></p>
 
     </section>
 
@@ -121,30 +118,6 @@
 
 
     <script>
-
-        function calcular() {
-            var nota1 = parseFloat( document.getElementById("nota1").value);
-            var nota2 = parseFloat(document.getElementById("nota2").value);
-            var nota3 = parseFloat(document.getElementById("nota3").value);
-            var nota4 = parseFloat(document.getElementById("nota4").value);
-            var nota5 = parseFloat(document.getElementById("nota5").value);
-
-
-
-             letra = document.getElementById("saida1")
-
-            var mf = (nota1 + nota2 + nota3 + nota4 + nota5)/2;
-            var media = mf;
-
-            if (media >= 14.9) {
-                document.getElementById("saida1").innerHTML = "sua média foi de " + media;
-            } else {
-                letra.style.color = 'red'
-                document.getElementById("saida1").innerHTML = "REPROVADO!"
-                document.getElementById("saida2").innerHTML = "Desculpe, mas infelizmente você não atingiu a média... reprovado!"
-                document.getElementById("saida3").innerHTML = "Sua média foi de " + media;
-            }
-        }
 
 
  function fim() {
