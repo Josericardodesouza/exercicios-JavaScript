@@ -10,7 +10,7 @@
             --cor1: #874897;
             --cor2: #FF90FE;
             --cor3: #1BA7B4;
-            
+
         }
 
         body {
@@ -20,12 +20,12 @@
 
 
         h1 {
-            color: orange;
+            color: var(--cor2);
             text-align: center;
         }
 
         h3 {
-            color: whitesmoke;
+            color: var(--cor3);
             text-align: center;
         }
 
@@ -43,8 +43,8 @@
 
         section#container2 {
             width: 100%;
-            color: green;
-            background-color: black;
+            color: var(--cor1);
+            background-color: white;
             display: inline-block;
             font-size: 1.1em;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -53,15 +53,23 @@
         }
 
         input {
+            height: 30px;
+            width: 60px;
             color: black;
             font-weight: bold;
             margin-left: 10px;
             margin-bottom: 20px;
-            box-shadow: 0px 0px 12px rgb(255, 225, 0);
+            box-shadow: 0px 0px 12px var(--cor2);
+            border: 1px white;
+        }
+
+        input:hover {
+            color: #874897;
+            background-color: yellow;
         }
 
         label {
-            color: yellow;
+            color: var(--cor1);
         }
 
 
@@ -71,13 +79,34 @@
 
 
         section#fim {
-            background-color: black;
+            background-color: white;
             width: 100vw;
             height: auto;
             margin-top: 4px;
             margin: 0;
             display: none;
         }
+
+        p {
+            color: #874897;
+        }
+
+        mark {
+            font-size: 1.2em;
+            font-weight: bolder;
+            border-radius: 5px 5px;
+            background-color: #1BA7B4;
+            color: #874897;
+        }
+
+        button {
+            border: 8px solid #874897;
+            color: white;
+            background-color: #FF90FE;
+            font-weight: 900;
+        }
+
+
 
 
 
@@ -87,20 +116,20 @@
 <body>
     <h1>Algoritmos com JavaScript</h1>
 
-    <h3></h3>
+    <h3>Muito obrigado por ajudar!</h3>
 
     <section id="container1">
 
-        <p>Muito obrigado por ajudar!</p>
-        <p>[1] para doar </p>
-
-
-        <label for=""> </label>
-        <input type="" name="" id="">
+        
+        <p>[1] para doar <mark>R$10</mark> </p>
+        <p>[2] para doar <mark>R$20</mark> </p>
+        <p>[3] para doar <mark>R$100</mark></p>
+        <p>[4] para doar <mark>outros valores</mark></p>
+        <p>[5] cancelar o programa</p>
         <br>
-        <label for=""> </label>
-        <input type="" name="" id="">
-        <br>
+        <label for="marcador">Escolha aqui: </label>
+        <input type="number" name="marcador" id="marcador">
+
         <button id="calcular" onclick="fim(); calcular()">Calcular</button>
     
 
@@ -138,6 +167,20 @@
 
     })
 
+ }
+
+ function calcular() {
+    var marcador = document.getElementById("marcador")
+
+    switch (marcador) {
+        case '1':
+            document.getElementById('saida1').innerHTML = "Sua doação foi de <mark id= 'valorDoacao'> R$10</mark>";
+            break;
+        case '2':
+            document.getElementById('saida1').innerHTML = "Sua doação foi de <mark id= 'valorDoacao'> R$20</mark>";
+            
+            
+    }
  }
 
 
