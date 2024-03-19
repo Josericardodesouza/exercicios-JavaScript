@@ -147,10 +147,34 @@
 
 
  function calcular() {
-    var nome = document.getElementById('idNome')
-    var at = document.getElementById('idAno')
-    var an = document.getElementById('idAnoNasc')
+    var nome = document.getElementById('idNome').value
+    var at = document.getElementById('idAno').value
+    var an = document.getElementById('idAnoNasc').value
     var container = document.getElementById('container2')
+
+
+    if (at > 1) {
+        var contadorAt = true;
+    } else {
+        window.alert('O campo de ano atua deve ser preenchido corretamente');
+    }
+
+    if (an > 1) {
+        var contadorAn = true;
+    } else {
+        window.alert('O campo de ano de nascimento deve ser preenchido corretamente');
+    }
+
+
+    if (nome.value === " ") {
+        window.alert('O campo de NOME deve ser preenchido corretamente');
+    }
+
+
+    // if (at.value >= an.value) {
+    //     contadorErro = true;
+    // }
+
 
 
     // if (at >=0 && an >= 0) {
@@ -173,10 +197,25 @@
     // }
 
 
+    if (an.value >= at.value) {
+       var confereErro = true;
+    } else {
+        var confereErro = false;
+    }
+
+    if (contadorAt === true && contadorAn === true & confereErro === false) {
+       var idade = at - an;
+    //    var confirma = true;
+    } else {
+        var idade = 0;
+        window.alert('Você digitou sua idade maior que a data atual!');
+    }
+
     if(idade >= 18) {
+        container.style.display = 'block'
         document.getElementById('saida1').innerHTML = 'idade: ' + idade;
         document.getElementById('saida2').innerHTML = nome + ', você está apto(a) a tirar a carteira de motorista';
-    } else {
+    } else if(idade <=17 && idade > 1) {
         container.style.display = 'block'
         document.getElementById('saida1').innerHTML = 'idade: ' + idade;
         document.getElementById('saida2').innerHTML = nome + ', você está inapto(a) para tirar a carteira de motorista'
