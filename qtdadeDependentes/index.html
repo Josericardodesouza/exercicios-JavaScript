@@ -39,6 +39,7 @@
 
         section#container2 {
             width: 100%;
+            height: auto;
             color: green;
             background-color: black;
             display: inline-block;
@@ -86,14 +87,14 @@
     <h3>Quantidade de dependentes de um funcionário</h3>
 
     <section id="container1">
-        <label for="nome"> </label>
-        <input type="" name="nome" id="nome">
+        <label for="nome">Qual o nome do funcionário? </label>
+        <input type="text" name="nome" id="nome">
         <br>
-        <label for="salario"> </label>
+        <label for="salario">Qual o salário bruto do funcionário? </label>
         <input type="number" name="salario" id="salario">
         <br>
         <label for="dependentes">Qual a quantidade de dependentes? </label>
-        <input type="number" name="dependentes" id="depedentes">
+        <input type="number" name="dependentes" id="dependentes">
         <br>
         <button id="calcular" onclick="fim(); calcular()">Calcular</button>
     
@@ -115,35 +116,43 @@
 <script>
 
  function calcular() {
-    var nome = document.getElementById('nome');
-var sal = document.getElementById('salario');
-var dep = document.getElementById('dependentes');
-var Nsal = 0;
+    var nome = document.getElementById("nome")
+//    var nomeFunc = document.getElementById("nome");
+//    const nome = toString(nomeFunc);
+   var salario = document.getElementById("salario").value;
+   const sal = parseFloat(salario);
+   var dependentes = document.getElementById("dependentes").value;
+   const dep = parseInt(dependentes);
+//    var dep = document.getElementById("dependentes");
+  
 
     switch(dep) {
         case '0':
-        var Nsal = sal + (sal*5/100);
+        var nSal = sal + (sal*5/100);
+        var num = nSal.toFixed(3);
 
-            document.getElementById('saida1').innerHTML= 'O salário de ' + nome + ' será de R$' + Nsal.toFixed(4);
+            document.getElementById('saida1').innerHTML= 'O salário de ' + nome + ' será de R$' + num;
 
         break;
         case '1':
         case '2':
         case '3':
-            var Nsal = sal + (sal*10/100);
-            document.getElementById('saida1').innerHTML= 'O salário de ' + nome + ' será de R$' + Nsal.toFixed(4);
+            var nSal = sal + (sal*10/100);
+            var num = nSal.toFixed(3);
+            document.getElementById('saida1').innerHTML = 'O salário de ' + nome + ' será de R$' + num;
         break;
         case '4':
         case '5':
         case '6':
-            var Nsal = sal + (sal*15/100);
-            document.getElementById('saida1').innerHTML= 'O salário de ' + nome + ' será de R$' + Nsal.toFixed(4);
+            var nSal = sal + (sal*15/100);
+            var num = nSal.toFixed(3);
+            document.getElementById('saida1').innerHTML = 'O salário de ' + nome + ' será de R$' + num;
         break;
 
         default:
-            var Nsal = sal + (sal*18/100);
-            document.getElementById('saida1').innerHTML= 'O salário de ' + nome + ' será de R$' + Nsal.toFixed(4);
-
+            var nSal = sal + (sal*18/100);
+            var num = nSal.toFixed(3);
+            document.getElementById('saida1').innerHTML = 'O salário de ' + nome + ' será de R$' + num;
         break;
 
     }
