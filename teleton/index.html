@@ -33,7 +33,7 @@
 
 
         section#container1 {
-            color: white;
+            color: #874897;
             display: inline-block;
             justify-content: center;
             margin-top: 110px;
@@ -43,6 +43,7 @@
 
         section#container2 {
             width: 100%;
+            height: auto;
             color: var(--cor1);
             background-color: white;
             display: inline-block;
@@ -74,6 +75,7 @@
 
 
         section#container2 > p {
+        color: #FF90FE;
             width: 100%;
         }
 
@@ -141,7 +143,7 @@
     </section>
 
     <section id="fim">
-        <p style="color: white; font-style: italic;" id="fimConsole"></p>
+        <p style="color: red; font-style: italic;" id="fimConsole"></p>
 
     </section>
 
@@ -149,6 +151,36 @@
     <script>
 
 
+
+ function calcular() {
+    var marcador = document.getElementById("marcador");
+    var c = marcador.value;
+
+    switch (c) {
+        case '1':
+            document.getElementById("saida1").innerHTML = "Sua doação foi de <mark id= 'valorDoacao'> R$10</mark>";
+            break;
+        case '2':
+            document.getElementById("saida1").innerHTML = "Sua doação foi de <mark id= 'valorDoacao'> R$20</mark>";
+            break;
+        case '3': 
+            document.getElementById("saida1").innerHTML =  "Sua doação foi de <mark id= 'valorDoacao'> R$100</mark>";
+            break;
+        case '4': 
+        var valor = prompt('Qual o valor? ')
+        document.getElementById("saida1").innerHTML = "Sua doação foi de <mark>R$" + valor + "</mark>"
+        break;
+       
+        default:
+        window.alert('Opção não disponivel :(');
+        break;
+
+            
+    }
+ }
+
+
+ 
  function fim() {
             var botao = document.getElementById("calcular");
             var oculta = document.getElementById("fim");
@@ -167,20 +199,6 @@
 
     })
 
- }
-
- function calcular() {
-    var marcador = document.getElementById("marcador")
-
-    switch (marcador) {
-        case '1':
-            document.getElementById('saida1').innerHTML = "Sua doação foi de <mark id= 'valorDoacao'> R$10</mark>";
-            break;
-        case '2':
-            document.getElementById('saida1').innerHTML = "Sua doação foi de <mark id= 'valorDoacao'> R$20</mark>";
-            
-            
-    }
  }
 
 
