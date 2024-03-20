@@ -1,0 +1,196 @@
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+
+        body {
+            background-color: black;
+        }
+        
+
+
+        h1 {
+            color: orange;
+            text-align: center;
+        }
+
+        h3 {
+            color: whitesmoke;
+            text-align: center;
+        }
+
+
+
+
+        section#container1 {
+            color: white;
+            display: inline-block;
+            justify-content: center;
+            margin-top: 110px;
+            margin-bottom: 60px
+
+        }
+
+        section#container2 {
+            width: 100%;
+            color: green;
+            background-color: black;
+            display: inline-block;
+            font-size: 1.1em;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-indent: 40px;
+           
+        }
+
+        input {
+            color: black;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 12px rgb(255, 225, 0);
+        }
+
+        label {
+            color: yellow;
+        }
+
+
+        section#container2 > p {
+            width: 100%;
+        }
+
+
+        section#fim {
+            background-color: black;
+            width: 100vw;
+            height: auto;
+            margin-top: 4px;
+            margin: 0;
+            display: none;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Algoritmos com JavaScript</h1>
+
+    <h3>Quantidade de dependentes de um funcionário</h3>
+
+    <section id="container1">
+        <label for="nome"> </label>
+        <input type="" name="nome" id="nome">
+        <br>
+        <label for="salario"> </label>
+        <input type="number" name="salario" id="salario">
+        <br>
+        <label for="dependentes">Qual a quantidade de dependentes? </label>
+        <input type="number" name="dependentes" id="depedentes">
+        <br>
+        <button id="calcular" onclick="fim(); calcular()">Calcular</button>
+    
+
+
+
+    <section id="container2">
+        <p id="saida1"></p>
+
+    </section>
+
+    <section id="fim">
+        <p style="color: white; font-style: italic;" id="fimConsole"></p>
+
+    </section>
+
+
+
+<script>
+
+ function calcular() {
+    var nome = document.getElementById('nome');
+var sal = document.getElementById('salario');
+var dep = document.getElementById('dependentes');
+var Nsal = 0;
+
+    switch(dep) {
+        case '0':
+        var Nsal = sal + (sal*5/100);
+
+            document.getElementById('saida1').innerHTML= 'O salário de ' + nome + ' será de R$' + Nsal.toFixed(4);
+
+        break;
+        case '1':
+        case '2':
+        case '3':
+            var Nsal = sal + (sal*10/100);
+            document.getElementById('saida1').innerHTML= 'O salário de ' + nome + ' será de R$' + Nsal.toFixed(4);
+        break;
+        case '4':
+        case '5':
+        case '6':
+            var Nsal = sal + (sal*15/100);
+            document.getElementById('saida1').innerHTML= 'O salário de ' + nome + ' será de R$' + Nsal.toFixed(4);
+        break;
+
+        default:
+            var Nsal = sal + (sal*18/100);
+            document.getElementById('saida1').innerHTML= 'O salário de ' + nome + ' será de R$' + Nsal.toFixed(4);
+
+        break;
+
+    }
+ }
+ 
+
+
+ function fim() {
+            var botao = document.getElementById("calcular");
+            var oculta = document.getElementById("fim");
+
+            botao.addEventListener('click', function() {
+                
+            if (oculta.style.display == 'block') {
+                oculta.style.display = 'none'
+                
+
+            } else {
+                oculta.style.display = 'block';
+                document.getElementById("fimConsole").innerHTML = ">>>> Fim da execução do programa!"
+            }
+
+
+    })
+
+ }
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
